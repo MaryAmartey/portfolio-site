@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+/* Add this CSS in your separate CSS file or within a style block in your component */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+
+
+.resumePage ol{
+  margin: 4rem;
+}
+
+.hidden-nav {
+  transform: translateY(-100%);
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+
+  nav a {
+    margin-left: 0.2rem;
+  }
+  nav ul {
+    margin-right: 1rem;
+  }
+
+  nav ul li {
+    margin-right: 2rem;
+  }
+}
+
