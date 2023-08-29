@@ -14,25 +14,30 @@ function Testimonials() {
     const testimonials =[
         {
             "author":"Polly",
-            "content":"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard.",
+            "content":"Ability to bring ideas to life. Mary's process of idea implementation is marked by a dedication to constant improvement bridging the gap between conception and execution",
+            "position": "Anoymous"
         },
         {
             "author":"Anoymous",
-            "content":"Quick Learner. It contains tons of predesigned components and pages starting from login screen to complex dashboard.",
+            "content":"Quick Learner. Mary excels in understanding new and complex concepts with ease, simplifying intricacies and contributing significantly to our team's success",
+            "position": "Anoymous"
         },
         {
             "author":"Anoymous",
-            "content":"Ability to bring ideas to life. It contains tons of predesigned components and pages starting from login screen to complex dashboard.",
+            "content":"An exceptional learner and an even better team player: a collaborator who leverages her vast knowledge to arrive at solutions that benefit the entire team",
+            "position": "Anoymous"
         }
 
     ]
   return (  
     <>
-    <section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+    <section id="testimonials" class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-4 lg:px-6">
       <div class="mx-auto max-w-screen-sm">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Testimonials</h2>
-          <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
+          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          Discover the impact I've made through the words of those I've worked with. Explore heartfelt testimonials from individuals who have experienced my dedication, expertise, and commitment firsthand.
+          </p>
       </div> 
       </div> 
     </section>
@@ -63,10 +68,9 @@ function Testimonials() {
                         <p class="text-2xl font-medium text-gray-900 dark:text-white">{testimonial.content}</p>
                     </blockquote>
                     <figcaption class="flex mb-10 items-center justify-center mt-6 space-x-3">
-                        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"/>
                         <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                             <div class="pr-3 font-medium text-gray-900 dark:text-white">{testimonial.author}</div>
-                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400 ">CEO at Google</div>
+                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400 ">{testimonial.position}</div>
                         </div>
                     </figcaption>
                 </figure>

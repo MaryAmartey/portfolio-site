@@ -17,7 +17,7 @@ function ProjectsPage() {
   const projects=[
     {
       img:puffpuffImg,
-      overview:"Ghana recipes wesbite",
+      overview:"Ghanaian recipes",
       link:"https://mksgallery.netlify.app/"
     },
     {
@@ -38,7 +38,7 @@ function ProjectsPage() {
 ]
   return (
     <>
-       <section className="bg-gray-100 dark:bg-gray-900 bg-no-repeat bg-cover bg-left bg-fixed"
+       <section id="projects" className="bg-gray-100 dark:bg-gray-900 bg-no-repeat bg-cover bg-left bg-fixed"
                       style={{ backgroundImage: `url('${projectBgImg}')` }} >
               <div className="flex flex-col md:flex-row">
                   <div className="justify-center p-5 m-10 w-1/2">
@@ -69,7 +69,7 @@ function ProjectsPage() {
                   projects.map(project=> {
                       return (
                         <SwiperSlide>
-                        <div class="max-w-sm border-gray-200 pt-5 pb-10 sm:pt-32 sm:pb-16 rounded-lg shadow-md opacity-100">
+                        <div class="max-w-sm border-gray-200 pt-15 pb-10 md:pt-28 sm:pb-16 rounded-lg shadow-md opacity-100">
                           <figure class="cursor-pointer">
                             <img src={project.img} alt="project images" className="rounded-t h-72 w-full object-cover" />
                             <figcaption class="p-4 dark:bg-gray-900 rounded-b dark:border-gray-700 opacity-95 ">

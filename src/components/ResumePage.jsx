@@ -4,7 +4,7 @@ import CV from '../assets/resumePDF/Amartey_Mary_2023.pdf'
 
 function ResumePage() {
   return (  
-    <section id="resume" className='resumePage'>                  
+    <section id="resume" className='resumePage pt-10'>                  
     <ol className="relative border-l border-blue-200 dark:border-blue-700"> 
     <li className="mb-10 ml-4">
             <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-blue-200"></div>

@@ -6,11 +6,11 @@ import ProjectsPage from "./ProjectsPage";
 
 function App() {
   return (
-   <BrowserRouter>
-      <Routes>
-        <Route  path="/" index element={<HomePage/>} />
-        <Route path="/content/*" element={<ContentPage />} />
-      </Routes>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/content/*" element={<ContentPage />} />
+    </Routes>
   </BrowserRouter>
   
   );
