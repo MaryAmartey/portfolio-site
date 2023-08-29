@@ -14,7 +14,7 @@ function Testimonials() {
     const testimonials =[
         {
             "author":"Polly",
-            "content":"Ability to bring ideas to life. Mary's process of idea implementation is marked by a dedication to constant improvement bridging the gap between conception and execution",
+            "content":"Ability to bring ideas to life. Mary excels in implementing ideas through continuous improvement, effectively bridging concept and execution.",
             "position": "Anoymous"
         },
         {
