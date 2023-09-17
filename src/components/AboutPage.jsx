@@ -5,14 +5,14 @@ import profilePhoto from '../assets/profilePhoto.jpg'
 function AboutPage() {
   //flex flex-col sm:flex-row w-full items-center justify-center
   return (
-    <section id="about" className="h-screen bg-gray-100 dark:bg-gray-900 bg-no-repeat bg-cover bg-left bg-fixed flex flex-col justify-center items-center"
+    <section id="about" className="bg-gray-100 dark:bg-gray-900 bg-no-repeat bg-cover bg-left bg-fixed flex flex-col justify-center items-center"
     style={{
       backgroundImage: `url(${aboutBgImg})`, // Removed single quotes around projectBgImg
     }}
   >
     
-    <div className="m-20 flex flex-col mt-60 md:mt-8 md:flex-row md:w-full items-center justify-center">
-      <div className="relative md:w-full md:max-w-md  w-2/5">
+    <div className="mt-56 px-2 mb-24 flex flex-col md:mt-20 lg:mt-20 md:flex-row md:w-full items-center justify-center">
+      <div className="relative  md:w-full md:max-w-md w-2/5">
         <img
           className="absolute bottom-0 transform translate-y-2/3 md:rounded-lg rounded-full "
           src={profilePhoto}
