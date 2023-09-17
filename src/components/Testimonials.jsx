@@ -14,13 +14,18 @@ function Testimonials() {
     const testimonials =[
         {
             "author":"Polly",
-            "content":"Ability to bring ideas to life. Mary excels in implementing ideas through continuous improvement, effectively bridging concept and execution.",
-            "position": "Anoymous"
+            "content":"Mary is a hardworker and diligent problem-solver. She works well independently and knows when to ask questions. A valuable asset to any team",
+            "position": "Lead Software Engineer"
         },
         {
-            "author":"Anoymous",
-            "content":"Quick Learner. Mary excels in understanding new and complex concepts with ease, simplifying intricacies and contributing significantly to our team's success",
-            "position": "Anoymous"
+            "author":"Charles",
+            "content":"Ability to bring ideas to life. Mary excels in implementing ideas through continuous improvement, effectively bridging concept and execution.",
+            "position": "Software Engineer"
+        },
+        {
+            "author":"Noemi",
+            "content":"Quick Learner. Mary excels in understanding new and complex concepts with ease. Also familiar with several programming languages",
+            "position": "Business Analyst"
         },
         {
             "author":"Anoymous",

@@ -24,7 +24,7 @@ function AboutPage() {
           Who am I as of 2023?
         </h5>
         <div className="divide-y divide-gray-600 ">
-          <p className="font-normal pb-3 text-white-700 dark:text-white-700">
+          <p className="font-normal pb-3 text-gray-900 dark:text-white">
           Hi! I'm Mary Amartey, a Ghanaian with a newly minted computer science degree from Oberlin College. My academic journey led me to the world of coding, where I marveled at how computers efficiently tackle complex problems. Now, using this foundation, I take on real-world challenges, leveraging my diverse background to innovate and solve problems creatively.
           </p>
           
@@ -32,7 +32,7 @@ function AboutPage() {
             <span className="block text-sm text-gray-900 dark:text-white">Mary Amartey</span>
             <div className='flex justify-between'>
             <span className="block text-sm  text-blue-500 truncate dark:text-blue-600 hover:text-blue-700">maryamartey123@yahoo.com</span>
-            <div className="flex divide-x  socials">
+            <div className="pl-4 flex divide-x  socials">
           <a href="https://www.facebook.com/mary.amartey.528">
             <svg class="mr-1 w-4 h-4 text-gray-800 hover:text-blue-700 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
               <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>

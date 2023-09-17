@@ -23,7 +23,7 @@ function ProjectsPage() {
     {
         img:memeImg,
         overview:"Meme Generator",
-        link:"https://mksprojects.netlify.app/memeGene    "
+        link:"https://mksprojects.netlify.app/memeGene"
     },
     {
       img:tictactoeImg,
@@ -77,7 +77,7 @@ function ProjectsPage() {
                                 {project.overview}
                               </p>
                       
-                              <a href="#" class="inline-flex items-center my-1 mb-5 px-3 py-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                              <a href={project.link} class="inline-flex items-center my-1 mb-5 px-3 py-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                 Demo
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
