@@ -7,7 +7,7 @@ function ResumePage() {
     <section id="resume" className='resumePage pt-10'>                  
     <ol className="relative border-l border-blue-200 dark:border-blue-700"> 
     <li className="mb-10 ml-4">
-            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-blue-200"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full dark:rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-blue-200"></div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-blue-600">Relevant Experience</h3>
             <p className="mb-4 text-base font-normal text-gray-500 dark:text-white">Boost your curiosity and my job prospects – Get my resume now!</p>
             <a href={CV} download className="inline-flex items-center px-4 py-2 text-sm font-medium text-white-900 bg-white border border-blue-200 rounded-lg hover:bg-blue-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-200 focus:text-blue-200 dark:bg-blue-800 dark:text-white dark:border-blue-600 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-200">
