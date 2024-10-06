@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -17,9 +18,7 @@ nav {
   z-index: 2;
 }
 
-
-
-.resumePage ol{
+.resumePage ol {
   margin: 4rem;
 }
 
@@ -29,7 +28,6 @@ nav {
 
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
-
   nav a {
     margin-left: 0.2rem;
   }
@@ -41,4 +39,3 @@ nav {
     margin-right: 2rem;
   }
 }
-
