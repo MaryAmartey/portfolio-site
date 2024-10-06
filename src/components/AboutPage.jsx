@@ -14,7 +14,7 @@ function AboutPage() {
         backgroundImage: `url(${aboutBgImg})`, // Removed single quotes around projectBgImg
       }}
     >
-      <div className="mt-56 px-2 mb-24 flex flex-col md:mt-20 lg:mt-20 md:flex-row md:w-full items-center justify-center">
+      <div className="max-w-screen-xl  mt-56 px-2 mb-24 flex flex-col md:mt-20 lg:mt-20 md:flex-row md:w-full items-center justify-center">
         <div className="relative  md:w-full md:max-w-md w-2/5">
           <img
             className="absolute bottom-0 transform translate-y-2/3 md:rounded-lg rounded-full "
@@ -23,17 +23,22 @@ function AboutPage() {
           />
         </div>
         <div className="max-w-md md:mt-44 md:pt-6 pt-36 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-900">
-          <h5 className="mb-2 pt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="px-2 mb-2 pt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Who am I as of 2024?
           </h5>
           <div className="divide-y divide-gray-600 ">
-            <p className="font-normal pb-3 text-gray-900 dark:text-white">
-              Hi! I'm Mary Amartey, a Ghanaian with a newly minted computer
-              science degree from Oberlin College. My academic journey led me to
-              the world of coding, where I marveled at how computers efficiently
-              tackle complex problems. Now, using this foundation, I take on
-              real-world challenges, leveraging my diverse background to
-              innovate and solve problems creatively.
+            <p className="px-2 font-normal paragraph-styling pb-3 text-gray-900 dark:text-white">
+              Hi! I am a full-stack developer with a passion for solving
+              real-world challenges through innovative technology solutions.
+              With experience in both front-end and back-end development, I
+              specialize in creating efficient, scalable applications. I'm
+              driven by curiosity for emerging trends in the tech industry and
+              have a strong commitment to continuous learning. My expertise
+              spans across modern frameworks, agile development, and
+              cross-functional collaboration, allowing me to effectively
+              contribute to dynamic, fast-paced environments. I am dedicated to
+              leveraging my skills to drive meaningful impact and deliver
+              high-quality results in every project.
             </p>
 
             <div className="px-1 py-2">

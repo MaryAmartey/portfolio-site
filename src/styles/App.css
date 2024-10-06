@@ -9,6 +9,12 @@ html {
   overflow-x: hidden;
 }
 
+.paragraph-styling{
+  text-wrap: pretty;
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
 /* Add this CSS in your separate CSS file or within a style block in your component */
 nav {
   position: fixed;

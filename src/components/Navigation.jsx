@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "../styles/App.css";
 import gsap from "gsap";
+import PropTypes from "prop-types";
 
 function Navigation(props) {
   const location = useLocation();
-  console.log(location);
   const { section } = useParams();
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [isVisible, setIsVisible] = useState(true);
@@ -60,11 +60,12 @@ function Navigation(props) {
   }, []);
 
   return (
-    // eslint-disable-next-line react/prop-types
     <nav
-      className={`${props.color} ${section === "about" ? "bg-transparent" : ""}`}
+      className={`${props.color} ${
+        section === "about" ? "bg-transparent" : ""
+      }`}
     >
-      <div className="max-w-screen-xl relative p-4 flex flex-wrap items-center justify-between mx-auto ">
+      <div className="page-width-wrapperrelative p-4 flex flex-wrap items-center justify-between mx-auto ">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
@@ -249,5 +250,9 @@ function Navigation(props) {
     </nav>
   );
 }
+
+Navigation.propTypes = {
+  color: PropTypes.string.isRequired, // Define color as a required string prop
+};
 
 export default Navigation;

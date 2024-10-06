@@ -1,6 +1,4 @@
-import React from "react";
-import mine from "../assets/bulbImage.jpg";
-
+/* eslint-disable react/no-unescaped-entities */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -39,13 +37,13 @@ function Testimonials() {
   ];
   return (
     <>
-      <section id="testimonials" class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-4 lg:px-6">
-          <div class="mx-auto max-w-screen-sm">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+      <section id="testimonials" className="bg-white dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-4 lg:px-6">
+          <div className="mx-auto max-w-screen-sm">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Testimonials
             </h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
               Discover the impact I've made through the words of those I've
               worked with. Explore heartfelt testimonials from individuals who
               have experienced my dedication, expertise, and commitment
@@ -71,11 +69,11 @@ function Testimonials() {
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} style={{ height: "100%" }}>
-            <section class="bg-white dark:bg-gray-900">
-              <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-                <figure class="max-w-screen-md mx-auto">
+            <section className="bg-white dark:bg-gray-900">
+              <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                <figure className="max-w-screen-md mx-auto">
                   <svg
-                    class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                    className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
                     viewBox="0 0 24 27"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -86,16 +84,16 @@ function Testimonials() {
                     />
                   </svg>
                   <blockquote>
-                    <p class="text-2xl font-medium text-gray-900 dark:text-white">
+                    <p className="text-2xl font-medium text-gray-900 dark:text-white">
                       {testimonial.content}
                     </p>
                   </blockquote>
-                  <figcaption class="flex mb-10 items-center justify-center mt-6 space-x-3">
-                    <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                      <div class="pr-3 font-medium text-gray-900 dark:text-white">
+                  <figcaption className="flex mb-10 items-center justify-center mt-6 space-x-3">
+                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                      <div className="pr-3 font-medium text-gray-900 dark:text-white">
                         {testimonial.author}
                       </div>
-                      <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400 ">
+                      <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400 ">
                         {testimonial.position}
                       </div>
                     </div>

@@ -3,6 +3,7 @@ import ResumePage from "./ResumePage";
 import ProjectsPage from "./ProjectsPage";
 import Navigation from "./Navigation";
 import Testimonials from "./Testimonials";
+import Recommendations from "./RecommendationsPage";
 import "../styles/App.css";
 
 function ContentPage() {
@@ -14,6 +15,7 @@ function ContentPage() {
       <ResumePage />
       <ProjectsPage />
       <Testimonials />
+      <Recommendations />
     </>
   );
 }
