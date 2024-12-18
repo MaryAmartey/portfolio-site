@@ -1,10 +1,10 @@
-import AboutPage from "./AboutPage";
-import ResumePage from "./ResumePage";
-import ProjectsPage from "./ProjectsPage";
-import Navigation from "./Navigation";
-import Testimonials from "./Testimonials";
-import Recommendations from "./RecommendationsPage";
-import "../styles/App.css";
+import AboutPage from './AboutPage'
+import ResumePage from './ResumePage'
+import ProjectsPage from './ProjectsPage'
+import Navigation from './Navigation'
+import Testimonials from './Testimonials'
+import Recommendations from './RecommendationsPage'
+import '../styles/App.css'
 
 function ContentPage() {
   return (
@@ -17,7 +17,7 @@ function ContentPage() {
       <Testimonials />
       <Recommendations />
     </>
-  );
+  )
 }
 
-export default ContentPage;
+export default ContentPage

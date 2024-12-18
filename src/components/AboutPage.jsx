@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
-import React from "react";
-import aboutBgImg from "../assets/darkBubbles.jpg";
-import profilePhoto from "../assets/profilePhoto.jpg";
+import React from 'react'
+import aboutBgImg from '../assets/darkBubbles.jpg'
+import profilePhoto from '../assets/profilePhoto.jpg'
 
 function AboutPage() {
   //flex flex-col sm:flex-row w-full items-center justify-center
@@ -103,7 +103,7 @@ function AboutPage() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default AboutPage;
+export default AboutPage
