@@ -16,7 +16,7 @@ function ResumePage() {
           <a
             href={CV}
             download
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white-900 bg-white border border-blue-200 rounded-lg focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-200 focus:text-blue-200 bg-blue-600 text-white border-blue-600 hover:text-white hover:bg-blue-500 focus:ring-blue-200"
+            className="bg-blue-800 inline-flex items-center px-4 py-2 text-sm font-medium text-white-900 bg-white border border-blue-200 rounded-lg focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-200 focus:text-blue-200 text-white border-blue-600 hover:text-white hover:bg-blue-600 focus:ring-blue-200"
           >
             Resume{' '}
             <svg
