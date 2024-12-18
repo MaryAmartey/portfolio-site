@@ -1,77 +1,72 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import "../styles/App.css";
-import gsap from "gsap";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react'
+import { useParams, useLocation } from 'react-router-dom'
+import '../styles/App.css'
+import gsap from 'gsap'
+import PropTypes from 'prop-types'
 
 function Navigation(props) {
-  const location = useLocation();
-  const { section } = useParams();
-  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
-  const [isVisible, setIsVisible] = useState(true);
-  const [activeLink, setActiveLink] = useState("");
+  const location = useLocation()
+  const { section } = useParams()
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY)
+  const [isVisible, setIsVisible] = useState(true)
+  const [activeLink, setActiveLink] = useState('')
 
   useEffect(() => {
-    setActiveLink(location.hash);
-  }, [location.hash]);
+    setActiveLink(location.hash)
+  }, [location.hash])
 
-  let scrollTimeout;
+  let scrollTimeout
 
   const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
-    setIsVisible(currentScrollPos <= prevScrollPos);
+    const currentScrollPos = window.scrollY
+    setIsVisible(currentScrollPos <= prevScrollPos)
 
-    clearTimeout(scrollTimeout);
+    clearTimeout(scrollTimeout)
     scrollTimeout = setTimeout(() => {
-      setIsVisible(true);
-    }, 100); // Adjust the timeout duration as needed
-    setPrevScrollPos(currentScrollPos);
-  };
+      setIsVisible(true)
+    }, 100) // Adjust the timeout duration as needed
+    setPrevScrollPos(currentScrollPos)
+  }
 
   React.useEffect(() => {
-    scrollToSection(section);
-    window.addEventListener("scroll", handleScroll);
+    scrollToSection(section)
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout);
-    };
-  }, [section]);
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimeout)
+    }
+  }, [section])
 
   useEffect(() => {
-    const t1 = gsap.timeline({ defaults: { duration: 1 } });
+    const t1 = gsap.timeline({ defaults: { duration: 1 } })
     // Add initial CSS for the navbar
-    gsap.set("nav", { y: "0%" });
-    t1.fromTo("nav", { y: "-100%" }, { y: isVisible ? "0%" : "-100%" });
-  }, [isVisible]);
+    gsap.set('nav', { y: '0%' })
+    t1.fromTo('nav', { y: '-100%' }, { y: isVisible ? '0%' : '-100%' })
+  }, [isVisible])
 
   const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
+    const sectionElement = document.getElementById(sectionId)
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
+      sectionElement.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   useEffect(() => {
-    const t1 = gsap.timeline({ defaults: { duration: 1 } });
+    const t1 = gsap.timeline({ defaults: { duration: 1 } })
     // Add initial CSS for the navbar
 
-    gsap.set("nav", { y: "0%" });
-    t1.fromTo("nav", { y: "-100%" }, { y: "0%" });
-  }, []);
+    gsap.set('nav', { y: '0%' })
+    t1.fromTo('nav', { y: '-100%' }, { y: '0%' })
+  }, [])
 
   return (
     <nav
       className={`${props.color} ${
-        section === "about" ? "bg-transparent" : ""
+        section === 'about' ? 'bg-transparent' : ''
       }`}
     >
       <div className="page-width-wrapperrelative p-4 flex flex-wrap items-center justify-between mx-auto ">
         <a href="https://flowbite.com/" className="flex items-center">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
-            alt="Flowbite Logo"
-          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Portfolio
           </span>
@@ -94,9 +89,9 @@ function Navigation(props) {
                 <a
                   href="/"
                   className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == ""
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black"
-                      : "text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    activeLink == ''
+                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
+                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                   }`}
                 >
                   Home
@@ -106,9 +101,9 @@ function Navigation(props) {
                 <a
                   href="/content#about"
                   className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == "#about"
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black"
-                      : "text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    activeLink == '#about'
+                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
+                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                   }`}
                 >
                   About
@@ -118,9 +113,9 @@ function Navigation(props) {
                 <a
                   href="/content#resume"
                   className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == "#resume"
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black"
-                      : "text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    activeLink == '#resume'
+                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
+                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                   }`}
                 >
                   Resume
@@ -130,9 +125,9 @@ function Navigation(props) {
                 <a
                   href="/content#projects"
                   className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == "#projects"
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black"
-                      : "text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    activeLink == '#projects'
+                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
+                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                   }`}
                 >
                   Projects
@@ -142,9 +137,9 @@ function Navigation(props) {
                 <a
                   href="/content#testimonials"
                   className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == "#testimonials"
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black"
-                      : "text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    activeLink == '#testimonials'
+                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
+                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
                   }`}
                 >
                   Testimonials
@@ -159,8 +154,8 @@ function Navigation(props) {
             aria-controls="navbar-user"
             aria-expanded="false"
             onClick={() => {
-              const dropdown = document.getElementById("user-dropdown");
-              dropdown.classList.toggle("hidden");
+              const dropdown = document.getElementById('user-dropdown')
+              dropdown.classList.toggle('hidden')
             }}
           >
             <span className="sr-only">Open main menu</span>
@@ -188,9 +183,9 @@ function Navigation(props) {
               <a
                 href="/"
                 className={`block py-2 pl-3 pr-4 ${
-                  activeLink == ""
-                    ? "text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    : " text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  activeLink == ''
+                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
+                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
                 }`}
               >
                 Home
@@ -200,9 +195,9 @@ function Navigation(props) {
               <a
                 href="/content#about"
                 className={`block py-2 pl-3 pr-4 ${
-                  activeLink == "#about"
-                    ? "text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    : " text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  activeLink == '#about'
+                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
+                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
                 }`}
               >
                 About
@@ -212,9 +207,9 @@ function Navigation(props) {
               <a
                 href="/content#resume"
                 className={`block py-2 pl-3 pr-4 ${
-                  activeLink == "#resume"
-                    ? "text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    : " text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  activeLink == '#resume'
+                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
+                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
                 }`}
               >
                 Resume
@@ -224,9 +219,9 @@ function Navigation(props) {
               <a
                 href="/content#projects"
                 className={`block py-2 pl-3 pr-4 ${
-                  activeLink == "#projects"
-                    ? "text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    : " text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  activeLink == '#projects'
+                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
+                    : 'text-white rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
                 }`}
               >
                 Projects
@@ -236,9 +231,9 @@ function Navigation(props) {
               <a
                 href="/content#testimonials"
                 className={`block py-2 pl-3 pr-4 ${
-                  activeLink == "#testimonials"
-                    ? "text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    : " text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  activeLink == '#testimonials'
+                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500'
+                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
                 }`}
               >
                 Testimonials
@@ -248,11 +243,11 @@ function Navigation(props) {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
 Navigation.propTypes = {
   color: PropTypes.string.isRequired, // Define color as a required string prop
-};
+}
 
-export default Navigation;
+export default Navigation

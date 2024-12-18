@@ -1,40 +1,40 @@
 /* eslint-disable react/no-unescaped-entities */
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 function Testimonials() {
   const testimonials = [
     {
-      author: "Polly",
+      author: 'Polly',
       content:
-        "Mary is a hardworker and diligent problem-solver. She works well independently and knows when to ask questions. A valuable asset to any team",
-      position: "Lead Software Engineer",
+        'Mary is a hardworker and diligent problem-solver. She works well independently and knows when to ask questions. A valuable asset to any team',
+      position: 'Lead Software Engineer',
     },
     {
-      author: "Charles",
+      author: 'Charles',
       content:
-        "Ability to bring ideas to life. Mary excels in implementing ideas through continuous improvement, effectively bridging concept and execution.",
-      position: "Software Engineer",
+        'Ability to bring ideas to life. Mary excels in implementing ideas through continuous improvement, effectively bridging concept and execution.',
+      position: 'Software Engineer',
     },
     {
-      author: "Noemi",
+      author: 'Noemi',
       content:
-        "Quick Learner. Mary excels in understanding new and complex concepts with ease. Also familiar with several programming languages",
-      position: "Business Analyst",
+        'Quick Learner. Mary excels in understanding new and complex concepts with ease. Also familiar with several programming languages',
+      position: 'Business Analyst',
     },
     {
-      author: "Anoymous",
+      author: 'Anoymous',
       content:
-        "An exceptional learner and an even better team player: a collaborator who leverages her vast knowledge to arrive at solutions that benefit the entire team",
-      position: "Anoymous",
+        'An exceptional learner and an even better team player: a collaborator who leverages her vast knowledge to arrive at solutions that benefit the entire team',
+      position: 'Anoymous',
     },
-  ];
+  ]
   return (
     <>
       <section id="testimonials" className="bg-white dark:bg-gray-900">
@@ -68,7 +68,7 @@ function Testimonials() {
         className="mySwiper"
       >
         {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index} style={{ height: "100%" }}>
+          <SwiperSlide key={index} style={{ height: '100%' }}>
             <section className="bg-white dark:bg-gray-900">
               <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                 <figure className="max-w-screen-md mx-auto">
@@ -105,7 +105,7 @@ function Testimonials() {
         ))}
       </Swiper>
     </>
-  );
+  )
 }
 
-export default Testimonials;
+export default Testimonials

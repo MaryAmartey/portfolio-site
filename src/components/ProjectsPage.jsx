@@ -1,48 +1,48 @@
-import projectBgImg from "../assets/bulbImage.jpg";
-import tictactoeImg from "../assets/tictactoeImage.jpg";
-import puffpuffImg from "../assets/puffpuffImage.jpg";
-import memeImg from "../assets/memeImage.jpg";
-import galleryImg from "../assets/galleryImage.jpg";
+import projectBgImg from '../assets/bulbImage.jpg'
+import tictactoeImg from '../assets/tictactoeImage.jpg'
+import puffpuffImg from '../assets/puffpuffImage.jpg'
+import memeImg from '../assets/memeImage.jpg'
+import galleryImg from '../assets/galleryImage.jpg'
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Navigation } from 'swiper/modules'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 function ProjectsPage() {
   const projects = [
     {
       img: puffpuffImg,
-      overview: "Ghanaian Recipes",
-      link: "",
-      status: "disabled",
-      note: "Coming soon",
+      overview: 'Ghanaian Recipes',
+      link: '',
+      status: 'disabled',
+      note: 'Coming soon',
     },
     {
       img: memeImg,
-      overview: "Meme Generator",
-      link: "https://mksprojects.netlify.app/memeGene",
-      status: "enabled",
-      note: "Demo",
+      overview: 'Meme Generator',
+      link: 'https://mksprojects.netlify.app/memeGene',
+      status: 'enabled',
+      note: 'Demo',
     },
     {
       img: tictactoeImg,
-      overview: "TicTacTae Game",
-      link: "https://mksprojects.netlify.app/",
-      status: "enabled",
-      note: "Demo",
+      overview: 'TicTacTae Game',
+      link: 'https://mksprojects.netlify.app/',
+      status: 'enabled',
+      note: 'Demo',
     },
     {
       img: galleryImg,
-      overview: "Image Search",
-      link: "https://mksgallery.netlify.app/",
-      status: "enabled",
-      note: "Demo",
+      overview: 'Image Search',
+      link: 'https://mksgallery.netlify.app/',
+      status: 'enabled',
+      note: 'Demo',
     },
-  ];
+  ]
   return (
     <>
       <section
@@ -94,21 +94,21 @@ function ProjectsPage() {
 
                           <a
                             href={
-                              project.status !== "disabled"
+                              project.status !== 'disabled'
                                 ? project.link
                                 : undefined
                             }
                             className={`inline-flex items-center my-1 mb-5 px-3 py-2 text-white 
                             ${
-                              project.status === "disabled"
-                                ? "bg-gray-400 cursor-not-allowed"
-                                : "bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80"
+                              project.status === 'disabled'
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80'
                             } 
                               font-medium rounded-lg text-sm text-center mr-2 mb-2
                              ${
-                               project.status === "disabled" ? "opacity-50" : ""
+                               project.status === 'disabled' ? 'opacity-50' : ''
                              }`}
-                            aria-disabled={project.status === "disabled"}
+                            aria-disabled={project.status === 'disabled'}
                           >
                             {project.note}
                             <svg
@@ -131,14 +131,14 @@ function ProjectsPage() {
                       </figure>
                     </div>
                   </SwiperSlide>
-                );
+                )
               })}
             </Swiper>
           </div>
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default ProjectsPage;
+export default ProjectsPage
