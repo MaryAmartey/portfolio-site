@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import ContentPage from "./ContentPage";
-import ScrollToTop from "./ScrollToTop";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './HomePage'
+import ContentPage from './ContentPage'
+import ScrollToTop from './ScrollToTop'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route path="/content/*" element={<ContentPage />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
-import "../styles/App.css";
-import CV from "../assets/resumePDF/Resume_MaryAmartey_2024.pdf";
+import '../styles/App.css'
+import CV from '../assets/resumePDF/Resume_MaryAmartey_2024.pdf'
 
 function ResumePage() {
   return (
@@ -16,9 +16,9 @@ function ResumePage() {
           <a
             href={CV}
             download
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white-900 bg-white border border-blue-200 rounded-lg hover:bg-blue-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-200 focus:text-blue-200 dark:bg-blue-800 dark:text-white dark:border-blue-600 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-200"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white-900 bg-white border border-blue-200 rounded-lg focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-200 focus:text-blue-200 bg-blue-600 text-white border-blue-600 hover:text-white hover:bg-blue-500 focus:ring-blue-200"
           >
-            Resume{" "}
+            Resume{' '}
             <svg
               className="w-3 h-3 ml-2"
               aria-hidden="true"
@@ -86,7 +86,7 @@ function ResumePage() {
         </li>
       </ol>
     </section>
-  );
+  )
 }
 
-export default ResumePage;
+export default ResumePage
