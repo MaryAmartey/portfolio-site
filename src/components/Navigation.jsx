@@ -62,7 +62,7 @@ function Navigation(props) {
   return (
     <nav
       className={`${props.color} ${
-        section === 'about' ? 'bg-transparent' : ''
+        section === 'about' ? 'bg-transparent' : 'bg-gray-900'
       }`}
     >
       <div className="page-width-wrapperrelative p-4 flex flex-wrap items-center justify-between mx-auto ">

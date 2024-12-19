@@ -9,7 +9,7 @@ import '../styles/App.css'
 function ContentPage() {
   return (
     <>
-      <Navigation color="bg-gray-950" />
+      <Navigation/>
 
       <AboutPage />
       <ResumePage />
