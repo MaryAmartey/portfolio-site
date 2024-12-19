@@ -1,5 +1,5 @@
 import '../styles/App.css'
-import CV from '../assets/resumePDF/Resume_MaryAmartey_2024.pdf'
+import CV from '../assets/resumePDF/Mary_Amartey_Resume.pdf'
 
 function ResumePage() {
   return (
