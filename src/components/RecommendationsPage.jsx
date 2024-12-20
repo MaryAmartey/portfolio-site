@@ -39,7 +39,7 @@ function RecommendationsPage() {
   return (
     <section className="my-5 lg:my-10 bg-black-200 dark:bg-black-900 antialiased">
       <div className="page-width-wrapper px-4 bg-gray-900 border border-gray-600 rounded-xl shadow py-8">
-        <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 text-white text-center">
+        <h2 className="mb-4 mt-6 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 text-white text-center">
           Recommendations
         </h2>
         {recommendations.map((recommendation, index) => {

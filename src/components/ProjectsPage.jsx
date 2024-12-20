@@ -5,7 +5,7 @@ import memeImg from '../assets/memeImage.jpg'
 import galleryImg from '../assets/galleryImage.jpg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -55,6 +55,7 @@ function ProjectsPage() {
             <h1 className="text-6xl md:mt-28 text-orange-300 font-bold">
               Projects
             </h1>
+            <div className="pt-1 text-orange-300">Early & Personal</div>
           </div>
           <div className="md:w-1/2 px-12">
             <Swiper
@@ -66,8 +67,12 @@ function ProjectsPage() {
               pagination={{
                 clickable: true,
               }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              navigation={false}
+              modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
               breakpoints={{
                 // when window width is >= 640px
