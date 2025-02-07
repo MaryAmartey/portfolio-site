@@ -1,101 +1,86 @@
-/* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import aboutBgImg from '../assets/darkBubbles.jpg'
 import profilePhoto from '../assets/profilePhoto.jpg'
 
-function AboutPage() {
-  //flex flex-col sm:flex-row w-full items-center justify-center
+const AboutPage = () => {
   return (
     <section
       id="about"
-      className="bg-gray-100 dark:bg-gray-900 bg-no-repeat bg-cover bg-left bg-fixed flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${aboutBgImg})`, // Removed single quotes around projectBgImg
-      }}
+      className="min-h-screen bg-cover bg-center bg-fixed flex items-center justify-center pt-20 xs:pt-24 sm:pt-28 md:pt-24 pb-8 px-4"
+      style={{ backgroundImage: `url(${aboutBgImg})` }}
     >
-      <div className="max-w-screen-xl  mt-56 px-2 mb-24 flex flex-col md:mt-20 lg:mt-20 md:flex-row md:w-full items-center justify-center">
-        <div className="relative  md:w-full md:max-w-md w-2/5">
-          <img
-            className="absolute bottom-0 transform translate-y-2/3 md:rounded-lg rounded-full "
-            src={profilePhoto}
-            alt="profile"
-          />
-        </div>
-        <div className="max-w-md md:mt-44 md:pt-6 pt-36 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-900">
-          <h5 className="px-2 mb-2 pt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Who am I as of 2024?
-          </h5>
-          <div className="divide-y divide-gray-600 ">
-            <p className="px-2 font-normal paragraph-styling pb-3 text-gray-900 dark:text-white">
-              Hi! I am a full-stack developer with a passion for solving
-              real-world challenges through innovative technology solutions.
-              With experience in both front-end and back-end development, I
-              specialize in creating efficient, scalable applications. I'm
-              driven by curiosity for emerging trends in the tech industry and
-              have a strong commitment to continuous learning. My expertise
-              spans across modern frameworks, agile development, and
-              cross-functional collaboration, allowing me to effectively
-              contribute to dynamic, fast-paced environments. I am dedicated to
-              leveraging my skills to drive meaningful impact and deliver
-              high-quality results in every project.
-            </p>
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+          {/* Photo Container */}
+          <div className="w-full flex justify-center mb-6 md:mb-0">
+            <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              <img
+                src={profilePhoto}
+                alt="Mary Amartey"
+                className="rounded-full object-cover w-full h-full shadow-2xl"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 rounded-full border-4 border-blue-400/50 animate-pulse"></div>
+            </div>
+          </div>
 
-            <div className="px-1 py-2">
-              <span className="block text-sm text-gray-900 dark:text-white">
-                Mary Amartey
-              </span>
-              <div className="flex justify-between">
-                <span className="block text-sm  text-blue-500 truncate dark:text-blue-600 hover:text-blue-700">
-                  maryamartey123@yahoo.com
-                </span>
-                <div className="pl-4 flex divide-x  socials">
-                  <a href="https://www.facebook.com/mary.amartey.528">
-                    <svg
-                      className="mr-1 w-4 h-4 text-gray-800 hover:text-blue-700 dark:text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 8 19"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                  <a href="https://www.linkedin.com/in/mary-amartey-0388a9185">
-                    <svg
-                      className="w-4 h-4 mx-2 text-gray-800 hover:text-blue-700 dark:text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 15 15"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-                        clipRule="evenodd"
-                      />
-                      <path d="M3 5.012H0V15h3V5.012Z" />
-                    </svg>
-                  </a>
-                  <a href="">
-                    <svg
-                      className="w-4 h-4 mx-2 text-gray-800 hover:text-blue-700 dark:text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
+          {/* Content Container */}
+          <div className="w-full">
+            <div className="relative backdrop-blur-md bg-white/10 p-4 xs:p-5 sm:p-6 md:p-8 rounded-xl shadow-2xl border border-white/20">
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-green-500/10"></div>
+              <div className="relative z-10">
+                <h2 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
+                  Who am I?
+                </h2>
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                    I am a passionate full-stack developer dedicated to crafting innovative solutions for real-world challenges. With expertise in both front-end and back-end development, I specialize in building efficient, scalable applications that make a difference.
+                  </p>
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                    My journey in tech is driven by an insatiable curiosity for emerging trends and a commitment to continuous learning. I thrive in dynamic environments where I can apply my expertise in modern frameworks and agile methodologies to deliver impactful results.
+                  </p>
+
+                  <div className="pt-4 sm:pt-6 border-t border-white/20">
+                    <div className="flex flex-col space-y-2 sm:space-y-3">
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">
+                        Mary Amartey
+                      </h3>
+                      <a
+                        href="mailto:maryamartey123@yahoo.com"
+                        className="inline-flex items-center text-sm sm:text-base text-white hover:text-blue-300 transition-colors font-medium group"
+                      >
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-400 group-hover:text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        maryamartey123@yahoo.com
+                      </a>
+                      <div className="flex space-x-4 pt-2">
+                        <a
+                          href="https://www.linkedin.com/in/mary-amartey-0388a9185"
+                          className="text-white hover:text-blue-300 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="LinkedIn Profile"
+                        >
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                          </svg>
+                        </a>
+                        <a
+                          href="https://github.com/yourusername"
+                          className="text-white hover:text-blue-300 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub Profile"
+                        >
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

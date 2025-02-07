@@ -10,6 +10,7 @@ function Navigation(props) {
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY)
   const [isVisible, setIsVisible] = useState(true)
   const [activeLink, setActiveLink] = useState('')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setActiveLink(location.hash)
@@ -24,7 +25,7 @@ function Navigation(props) {
     clearTimeout(scrollTimeout)
     scrollTimeout = setTimeout(() => {
       setIsVisible(true)
-    }, 100) // Adjust the timeout duration as needed
+    }, 100)
     setPrevScrollPos(currentScrollPos)
   }
 
@@ -39,7 +40,6 @@ function Navigation(props) {
 
   useEffect(() => {
     const t1 = gsap.timeline({ defaults: { duration: 1 } })
-    // Add initial CSS for the navbar
     gsap.set('nav', { y: '0%' })
     t1.fromTo('nav', { y: '-100%' }, { y: isVisible ? '0%' : '-100%' })
   }, [isVisible])
@@ -51,195 +51,112 @@ function Navigation(props) {
     }
   }
 
-  useEffect(() => {
-    const t1 = gsap.timeline({ defaults: { duration: 1 } })
-    // Add initial CSS for the navbar
-
-    gsap.set('nav', { y: '0%' })
-    t1.fromTo('nav', { y: '-100%' }, { y: '0%' })
-  }, [])
+  const navLinkClasses = (isActive) =>
+    `relative px-3 py-2 transition-all duration-300 ${
+      isActive
+        ? 'text-blue-400'
+        : 'text-gray-300 hover:text-white'
+    } before:content-[""] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:rounded-full before:opacity-0 before:transition-all before:duration-300 before:bg-gradient-to-r before:from-blue-400 before:to-green-400 hover:before:w-full hover:before:opacity-100`
 
   return (
     <nav
-      className={`${props.color} ${
-        section === 'about' ? 'bg-transparent' : 'bg-gray-900'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-sm ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${props.color}`}
     >
-      <div className="page-width-wrapperrelative p-4 flex flex-wrap items-center justify-between mx-auto ">
-        <a href="https://flowbite.com/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <a href="/" className="text-2xl font-bold gradient-text">
             Portfolio
-          </span>
-        </a>
-        <div className="">
-          <div
-            className="mx-2 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 absolute right-0 top-full"
-            id="user-dropdown"
-          >
-            <div className="px-4 py-3">
-              <span className="block text-sm text-gray-900 dark:text-white">
-                Mary Amartey
-              </span>
-              <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
-                maryamartey123@yahoo.com
-              </span>
-            </div>
-            <ul className="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <a
-                  href="/"
-                  className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == ''
-                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
-                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                  }`}
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/content#about"
-                  className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == '#about'
-                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
-                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                  }`}
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/content#resume"
-                  className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == '#resume'
-                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
-                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                  }`}
-                >
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/content#projects"
-                  className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == '#projects'
-                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
-                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                  }`}
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/content#testimonials"
-                  className={`block py-2 pl-3 pr-4 rounded ${
-                    activeLink == '#testimonials'
-                      ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:text-black'
-                      : 'text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white'
-                  }`}
-                >
-                  Testimonials
-                </a>
-              </li>
-            </ul>
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="/" className={navLinkClasses(activeLink === '')}>
+              Home
+            </a>
+            <a href="/content#about" className={navLinkClasses(activeLink === '#about')}>
+              About
+            </a>
+            <a href="/content#resume" className={navLinkClasses(activeLink === '#resume')}>
+              Resume
+            </a>
+            <a href="/content#projects" className={navLinkClasses(activeLink === '#projects')}>
+              Projects
+            </a>
+            <a href="/content#testimonials" className={navLinkClasses(activeLink === '#testimonials')}>
+              Testimonials
+            </a>
           </div>
+
+          {/* Mobile Menu Button */}
           <button
-            data-collapse-toggle="navbar-user"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-user"
-            aria-expanded="false"
-            onClick={() => {
-              const dropdown = document.getElementById('user-dropdown')
-              dropdown.classList.toggle('hidden')
-            }}
+            className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <span className="sr-only">Open main menu</span>
             <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
               fill="none"
-              viewBox="0 0 17 14"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
             </svg>
           </button>
         </div>
 
-        <div className="hidden w-full md:flex md:w-auto" id="navbar-user">
-          <ul className="flex flex-col font-medium p-4 md:p-0 rounded-lg bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-transparent">
-            <li>
-              <a
-                href="/"
-                className={`block py-2 pl-3 pr-4 ${
-                  activeLink == ''
-                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
-                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                }`}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/content#about"
-                className={`block py-2 pl-3 pr-4 ${
-                  activeLink == '#about'
-                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
-                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                }`}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="/content#resume"
-                className={`block py-2 pl-3 pr-4 ${
-                  activeLink == '#resume'
-                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
-                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                }`}
-              >
-                Resume
-              </a>
-            </li>
-            <li>
-              <a
-                href="/content#projects"
-                className={`block py-2 pl-3 pr-4 ${
-                  activeLink == '#projects'
-                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:hover:text-blue-700'
-                    : 'text-white rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                }`}
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="/content#testimonials"
-                className={`block py-2 pl-3 pr-4 ${
-                  activeLink == '#testimonials'
-                    ? 'bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500'
-                    : 'text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                }`}
-              >
-                Testimonials
-              </a>
-            </li>
-          </ul>
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden transition-all duration-300 ${
+            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden`}
+        >
+          <div className="pt-2 pb-3 space-y-1">
+            <a
+              href="/"
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md"
+            >
+              Home
+            </a>
+            <a
+              href="/content#about"
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md"
+            >
+              About
+            </a>
+            <a
+              href="/content#resume"
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md"
+            >
+              Resume
+            </a>
+            <a
+              href="/content#projects"
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md"
+            >
+              Projects
+            </a>
+            <a
+              href="/content#testimonials"
+              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md"
+            >
+              Testimonials
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -247,7 +164,7 @@ function Navigation(props) {
 }
 
 Navigation.propTypes = {
-  color: PropTypes.string.isRequired, // Define color as a required string prop
+  color: PropTypes.string.isRequired,
 }
 
 export default Navigation
