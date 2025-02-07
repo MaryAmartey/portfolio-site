@@ -57,7 +57,8 @@ function ResumePage() {
               Technology Intern at AKQA
             </h3>
             <p className="text-gray-300">
-              Technologies acquired: React.js, Node.js, Express, Websocket, React-native, CMS-Strapi, Langchain, Postman
+              Technologies acquired: React.js, Node.js, Express, Websocket,
+              React-native, CMS-Strapi, Langchain, Postman
             </p>
           </li>
 
@@ -70,7 +71,8 @@ function ResumePage() {
               Junior Full Stack Developer at Codyssia Software
             </h3>
             <p className="text-gray-300">
-              Technologies acquired: PHP with Laravel, Vue.js, Firebase, MySQL, and TablePlus
+              Technologies acquired: PHP with Laravel, Vue.js, Firebase, MySQL,
+              and TablePlus
             </p>
           </li>
 
@@ -83,7 +85,9 @@ function ResumePage() {
               Research Assistant at Oberlin College Computer Science Department
             </h3>
             <p className="text-gray-300">
-              Researched successful strategies for retaining students in Introductory Computer Science classes, which were utilized to shape the syllabus for the subsequent academic year
+              Researched successful strategies for retaining students in
+              Introductory Computer Science classes, which were utilized to
+              shape the syllabus for the subsequent academic year
             </p>
           </li>
         </ol>

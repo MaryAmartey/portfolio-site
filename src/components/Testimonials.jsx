@@ -32,7 +32,7 @@ function Testimonials() {
       position: 'Anonymous',
     },
   ]
-  
+
   return (
     <section id="testimonials" className="py-24 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
@@ -41,7 +41,8 @@ function Testimonials() {
             Testimonials
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Discover the impact I've made through the words of those I've worked with
+            Discover the impact I've made through the words of those I've worked
+            with
           </p>
         </div>
 

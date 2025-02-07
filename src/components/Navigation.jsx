@@ -53,9 +53,7 @@ function Navigation(props) {
 
   const navLinkClasses = (isActive) =>
     `relative px-3 py-2 transition-all duration-300 ${
-      isActive
-        ? 'text-blue-400'
-        : 'text-gray-300 hover:text-white'
+      isActive ? 'text-blue-400' : 'text-gray-300 hover:text-white'
     } before:content-[""] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:rounded-full before:opacity-0 before:transition-all before:duration-300 before:bg-gradient-to-r before:from-blue-400 before:to-green-400 hover:before:w-full hover:before:opacity-100`
 
   return (
@@ -75,16 +73,28 @@ function Navigation(props) {
             <a href="/" className={navLinkClasses(activeLink === '')}>
               Home
             </a>
-            <a href="/content#about" className={navLinkClasses(activeLink === '#about')}>
+            <a
+              href="/content#about"
+              className={navLinkClasses(activeLink === '#about')}
+            >
               About
             </a>
-            <a href="/content#resume" className={navLinkClasses(activeLink === '#resume')}>
+            <a
+              href="/content#resume"
+              className={navLinkClasses(activeLink === '#resume')}
+            >
               Resume
             </a>
-            <a href="/content#projects" className={navLinkClasses(activeLink === '#projects')}>
+            <a
+              href="/content#projects"
+              className={navLinkClasses(activeLink === '#projects')}
+            >
               Projects
             </a>
-            <a href="/content#testimonials" className={navLinkClasses(activeLink === '#testimonials')}>
+            <a
+              href="/content#testimonials"
+              className={navLinkClasses(activeLink === '#testimonials')}
+            >
               Testimonials
             </a>
           </div>

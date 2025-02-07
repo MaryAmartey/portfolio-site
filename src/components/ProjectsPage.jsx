@@ -15,7 +15,8 @@ function ProjectsPage() {
     {
       img: puffpuffImg,
       overview: 'Ghanaian Recipes',
-      description: 'A collection of traditional Ghanaian recipes and cooking guides',
+      description:
+        'A collection of traditional Ghanaian recipes and cooking guides',
       link: '',
       status: 'disabled',
       note: 'Coming soon',
@@ -23,7 +24,8 @@ function ProjectsPage() {
     {
       img: memeImg,
       overview: 'Meme Generator',
-      description: 'Create and customize memes with this interactive web application',
+      description:
+        'Create and customize memes with this interactive web application',
       link: 'https://mksprojects.netlify.app/memeGene',
       status: 'enabled',
       note: 'Demo',
@@ -39,7 +41,8 @@ function ProjectsPage() {
     {
       img: galleryImg,
       overview: 'Image Search',
-      description: 'Search and browse high-quality images with advanced filtering',
+      description:
+        'Search and browse high-quality images with advanced filtering',
       link: 'https://mksgallery.netlify.app/',
       status: 'enabled',
       note: 'Demo',
@@ -55,7 +58,10 @@ function ProjectsPage() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 id="projects-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2
+            id="projects-heading"
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+          >
             Projects
           </h2>
           <p className="text-gray-300 text-sm sm:text-base" role="doc-subtitle">
@@ -101,7 +107,7 @@ function ProjectsPage() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
-              <article 
+              <article
                 className="h-full flex flex-col bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-400"
                 tabIndex="0"
               >
@@ -117,11 +123,16 @@ function ProjectsPage() {
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                     {project.overview}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-base mb-4 flex-grow" aria-label={`Description for ${project.overview}`}>
+                  <p
+                    className="text-gray-300 text-sm sm:text-base mb-4 flex-grow"
+                    aria-label={`Description for ${project.overview}`}
+                  >
                     {project.description}
                   </p>
                   <a
-                    href={project.status !== 'disabled' ? project.link : undefined}
+                    href={
+                      project.status !== 'disabled' ? project.link : undefined
+                    }
                     className={`inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                       project.status === 'disabled'
                         ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
