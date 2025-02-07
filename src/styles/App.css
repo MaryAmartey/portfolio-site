@@ -7,6 +7,7 @@
 body,
 html {
   overflow-x: hidden;
+  background-color: #111827;
 }
 
 .paragraph-styling {
@@ -24,19 +25,35 @@ nav {
   z-index: 2;
 }
 
-.resumePage ol {
-  margin: 4rem;
-}
-
 .hidden-nav {
   transform: translateY(-100%);
 }
 
-/* Media Queries for Responsive Design */
+/* Smooth loading transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* Media Queries */
 @media screen and (max-width: 768px) {
   nav a {
     margin-left: 0.2rem;
   }
+  
   nav ul {
     margin-right: 1rem;
   }
