@@ -4,12 +4,26 @@ import LoadingSpinner from './LoadingSpinner'
 import '../styles/App.css'
 
 // Lazy load components with explicit default imports
-const AboutPage = lazy(() => import('./AboutPage').then(module => ({ default: module.default })))
-const ResumePage = lazy(() => import('./ResumePage').then(module => ({ default: module.default })))
-const ProjectsPage = lazy(() => import('./ProjectsPage').then(module => ({ default: module.default })))
-const Testimonials = lazy(() => import('./Testimonials').then(module => ({ default: module.default })))
-const Recommendations = lazy(() => import('./RecommendationsPage').then(module => ({ default: module.default })))
-const TechStack = lazy(() => import('./TechStack').then(module => ({ default: module.default })))
+const AboutPage = lazy(() =>
+  import('./AboutPage').then((module) => ({ default: module.default }))
+)
+const ResumePage = lazy(() =>
+  import('./ResumePage').then((module) => ({ default: module.default }))
+)
+const ProjectsPage = lazy(() =>
+  import('./ProjectsPage').then((module) => ({ default: module.default }))
+)
+const Testimonials = lazy(() =>
+  import('./Testimonials').then((module) => ({ default: module.default }))
+)
+const Recommendations = lazy(() =>
+  import('./RecommendationsPage').then((module) => ({
+    default: module.default,
+  }))
+)
+const TechStack = lazy(() =>
+  import('./TechStack').then((module) => ({ default: module.default }))
+)
 
 function ContentPage() {
   return (

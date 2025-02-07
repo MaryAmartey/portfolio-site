@@ -63,7 +63,9 @@ function RecommendationsPage() {
                       {recommendation.name}
                     </h3>
                     <p className="text-blue-400">{recommendation.role}</p>
-                    <p className="text-gray-400 text-sm">{recommendation.date}</p>
+                    <p className="text-gray-400 text-sm">
+                      {recommendation.date}
+                    </p>
                   </div>
                   <div
                     className={`transform transition-transform duration-300 ${

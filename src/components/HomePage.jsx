@@ -99,7 +99,12 @@ function HomePage() {
 
     // Animation function
     function animate() {
-      if (!sphereMeshRef.current || !particleMeshRef.current || !rendererRef.current) return
+      if (
+        !sphereMeshRef.current ||
+        !particleMeshRef.current ||
+        !rendererRef.current
+      )
+        return
 
       sphereMeshRef.current.rotation.x += 0.00001
       sphereMeshRef.current.rotation.y += 0.0005
